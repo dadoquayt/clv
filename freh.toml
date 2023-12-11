@@ -1,0 +1,23 @@
+[package]
+name = "fuel-core-client-bin"
+version = { workspace = true }
+authors = { workspace = true }
+categories = ["concurrency", "cryptography::cryptocurrencies", "emulators"]
+edition = { workspace = true }
+homepage = { workspace = true }
+keywords = ["blockchain", "cryptocurrencies", "fuel-vm", "fuel-cli", "fuel-gql"]
+license = { workspace = true }
+repository = { workspace = true }
+description = "The fuel cli to interact with `fuel-core` client."
+
+[[bin]]
+name = "fuel-core-client"
+path = "src/main.rs"
+
+[dependencies]
+clap = { workspace = true, features = ["derive"] }
+fuel-core-client = { workspace = true }
+fuel-core-types = { workspace = true, features = ["serde"] }
+serde_json = { workspace = true, features = ["raw_value"] }
+tokio = { workspace = true, features = ["macros"] }
+
